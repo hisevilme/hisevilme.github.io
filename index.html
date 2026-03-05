@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Songa Adams | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: radial-gradient(circle at center, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #e9ecef;
+            overflow-x: hidden;
+        }
+        .section-content {
+            display: none;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+        .section-content.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="min-h-screen font-sans">
+
+    <nav class="fixed top-0 w-full z-50 bg-opacity-20 backdrop-blur-md border-b border-gray-700">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold tracking-widest uppercase">Songa Adams</h1>
+            <div class="space-x-8">
+                <button onclick="switchPage('home')" class="hover:text-blue-400 transition">Home</button>
+                <button onclick="switchPage('about')" class="hover:text-blue-400 transition">About</button>
+                <button onclick="switchPage('projects')" class="hover:text-blue-400 transition">Projects</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-32 px-6 max-w-4xl mx-auto">
+        
+        <section id="home" class="section-content active text-center">
+            <h2 class="text-6xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
+                Passionate Student & Developer
+            </h2>
+            <p class="text-xl text-gray-400 leading-relaxed max-w-2xl mx-auto">
+                Building digital experiences through clean code and innovative design. Focused on the future of web technology.
+            </p>
+            <div class="mt-10">
+                <button onclick="switchPage('projects')" class="px-8 py-3 border border-blue-500 rounded-full hover:bg-blue-500 hover:text-white transition">
+                    View My Work
+                </button>
+            </div>
+        </section>
+
+        <section id="about" class="section-content">
+            <h2 class="text-3xl font-bold mb-8 border-b border-gray-700 pb-2">About Me</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <p class="text-gray-300 leading-relaxed">
+                        I am Songa Adams, a dedicated student pursuing excellence in technology. My approach combines technical rigor with a creative mindset to solve complex problems.
+                    </p>
+                </div>
+                <div class="bg-gray-800 bg-opacity-40 p-6 rounded-lg border border-gray-700">
+                    <h3 class="font-semibold mb-4 text-blue-400">Technical Skills</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li>Frontend Development</li>
+                        <li>Tailwind CSS Design</li>
+                        <li>JavaScript Architecture</li>
+                        <li>UI/UX Logic</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section-content">
+            <h2 class="text-3xl font-bold mb-8 border-b border-gray-700 pb-2">Selected Projects</h2>
+            <div class="grid grid-cols-1 gap-6">
+                <div class="p-6 bg-gray-800 bg-opacity-30 border border-gray-700 rounded-xl hover:border-blue-500 transition">
+                    <h3 class="text-xl font-bold">Data Visualization Interface</h3>
+                    <p class="text-gray-400 mt-2">A real-time dashboard focusing on clean data representation.</p>
+                </div>
+                <div class="p-6 bg-gray-800 bg-opacity-30 border border-gray-700 rounded-xl hover:border-blue-500 transition">
+                    <h3 class="text-xl font-bold">Educational Platform</h3>
+                    <p class="text-gray-400 mt-2">A specialized tool built to streamline student resource management.</p>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <script>
+        function switchPage(pageId) {
+            const sections = document.querySelectorAll('.section-content');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
